@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Professional English Lab — Correspondence Lab</title>
+<style>
+:root{--blue:#155eef;--blue2:#eaf2ff;--ink:#0f172a;--text:#334155;--muted:#64748b;--line:#d9e2f0;--green:#0f9f6e;--amber:#c87900;--red:#d14343;--bg:#f8fafc}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff} button,input,textarea{font:inherit}.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #e2e8f0;backdrop-filter:blur(10px)}.bar{max-width:1180px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border-radius:13px;background:var(--blue);color:white;display:grid;place-items:center;font-weight:800;box-shadow:0 5px 16px rgba(21,94,239,.18)}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--blue);font-weight:800}.brand h1{font-size:19px;margin:2px 0 0}.sub{font-size:13px;color:var(--muted)}main{max-width:1180px;margin:auto;padding:30px 24px}.layout{display:grid;grid-template-columns:.9fr 1.55fr;gap:24px;align-items:start}.card{border:1px solid #e2e8f0;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.055);overflow:hidden}.scenario{background:linear-gradient(145deg,#f6f9ff,#fff);border-color:#dbe7fb;padding:24px}.scenarioHead{display:flex;justify-content:space-between;gap:16px}.scenario h2{margin:5px 0 18px;font-size:25px}.mini{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);font-weight:800}.refresh{border:1px solid #cbdcf7;background:#fff;color:var(--blue);width:40px;height:40px;border-radius:12px;cursor:pointer}.info{margin:16px 0}.info b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}.info p{margin:0;color:var(--text);line-height:1.55}.facts{padding-left:20px;color:var(--text);line-height:1.65}.choicebox{padding:20px;margin-top:18px}.choicebox h3{font-size:15px;margin:0}.choicebox p{font-size:13px;color:var(--muted);margin:5px 0 14px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{border:1px solid #dbe3ee;background:#fff;padding:13px;border-radius:12px;font-weight:700;color:var(--text);cursor:pointer}.choice.active{border-color:var(--blue);background:#f2f6ff;color:#1643a4;box-shadow:0 0 0 3px #e9f1ff}.advice{margin-top:12px;border-radius:12px;padding:11px 12px;font-size:13px}.advice.good{background:#effbf6;color:#176b4e;border:1px solid #cbeedd}.advice.warn{background:#fff8eb;color:#865200;border:1px solid #f7dfab}.editorHead{padding:20px 22px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;gap:15px}.editorHead h2{font-size:20px;margin:3px 0 0}.tag{font-size:11px;background:#f1f5f9;color:var(--muted);border-radius:999px;padding:7px 10px;align-self:center}.editor{padding:22px}.field{margin-bottom:14px}.field label{display:block;font-size:13px;font-weight:750;color:var(--text);margin-bottom:7px}.field input,.field textarea{width:100%;border:1px solid #cfd8e6;border-radius:12px;padding:12px 14px;outline:none;color:var(--ink);background:#fff}.field input:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e7f0ff}.field input[disabled]{background:#f8fafc;color:var(--muted)}textarea{min-height:330px;line-height:1.6;resize:vertical}.btn{border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:800;padding:12px 17px;cursor:pointer;box-shadow:0 5px 16px rgba(21,94,239,.18)}.scoreNote{font-size:13px;color:var(--muted);margin-left:10px}.feedback{border-top:1px solid #e2e8f0;background:#f8fafc;padding:22px}.feedbackTop{display:flex;justify-content:space-between;align-items:end}.feedback h3{margin:4px 0 0}.score{font-size:32px;color:var(--blue);font-weight:850;text-align:right}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}.check{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px;display:flex;gap:10px}.dot{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;flex:none}.ok{background:#eafaf3;color:var(--green)}.warn{background:#fff5e7;color:var(--amber)}.bad{background:#fff0f0;color:var(--red)}.check b{font-size:13px}.check p{font-size:12.5px;color:var(--muted);margin:4px 0 0;line-height:1.4}.footnote{font-size:11.5px;color:var(--muted);margin-top:14px}@media(max-width:860px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.bar .sub{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><div class="brand"><div class="mark">PE</div><div><div class="eyebrow">Professional English Lab</div><h1>Correspondence Lab</h1></div></div><div class="sub">Practice → Diagnose → Revise</div></div></header>
+<main><div class="layout">
+<div>
+  <section class="card scenario"><div class="scenarioHead"><div><div class="mini" id="scenarioNo">Scenario 1</div><h2 id="title"></h2></div><button class="refresh" id="nextBtn" title="Next scenario">↻</button></div><div class="info"><b>You are</b><p id="role"></p></div><div class="info"><b>Recipient</b><p id="recipient"></p></div><div class="info"><b>Goal</b><p id="goal"></p></div><div class="info"><b>Information available</b><ul class="facts" id="facts"></ul></div></section>
+  <section class="card choicebox"><h3>Step 1 — Choose the channel</h3><p>Which genre best fits this situation?</p><div class="choices"><button class="choice active" data-mode="email">✉ Email</button><button class="choice" data-mode="letter">▤ Formal letter</button></div><div id="advice" class="advice good"></div></section>
+</div>
+<section class="card"><div class="editorHead"><div><div class="mini">Step 2</div><h2 id="draftTitle">Draft your professional email</h2></div><div class="tag">No auto-writing</div></div><div class="editor"><div class="field"><label id="recipientLabel">To</label><input id="to" disabled/></div><div class="field"><label>Subject</label><input id="subject" placeholder="Write a specific subject line"/></div><div class="field"><label>Message</label><textarea id="message" placeholder="Write your message here…"></textarea></div><button class="btn" id="checkBtn">Check my draft →</button><span class="scoreNote" id="attempts"></span></div><div id="feedback" class="feedback" hidden><div class="feedbackTop"><div><div class="mini">Diagnostic feedback</div><h3>Revise before you send</h3></div><div><div class="score" id="score">0</div><div class="sub">/100 draft score</div></div></div><div class="grid" id="checks"></div><div class="footnote">The checker gives diagnostic prompts, not a rewritten answer. Revise the message yourself, then check again.</div></div></section>
+</div></main>
+<script>
+const scenarios=[
+{
+ title:'Respond to an E-Journal Access Complaint', role:'Electronic resources service staff member', recipient:'A university student',
+ goal:'Respond to a report that an e-journal article cannot be accessed through the library portal.', preferred:'email',
+ facts:['Database: ProQuest','Article access failed on: 2 November 2026','User is accessing from off campus','User should try institutional login first','If the problem continues, staff will check access settings','Update promised within one working day'],
+ subjectKeywords:['e-journal','proquest','access','database','article'],
+ details:[
+  {label:'database name',terms:['proquest']},{label:'problem date',terms:['2 november 2026','2 november']},
+  {label:'off-campus context',terms:['off campus','off-campus']},{label:'institutional login step',terms:['institutional login','university login','institution login']},
+  {label:'follow-up action',terms:['check access','check the access','access settings','investigate']},{label:'response timeframe',terms:['one working day','1 working day','one business day','1 business day']}
+ ]
+},
+{
+ title:'Request Correction of an Event Announcement', role:'Library program coordinator', recipient:'University communications staff member',
+ goal:'Request correction of inaccurate information in a published library event announcement.', preferred:'email',
+ facts:['Event: Research Skills Clinic','Published date is incorrect: 12 November 2026','Correct date: 19 November 2026','Time remains: 13:00–15:00','Venue remains: Library Training Room','Correction is needed before 6 November 2026'],
+ subjectKeywords:['correction','research skills clinic','event','announcement','date'],
+ details:[
+  {label:'event name',terms:['research skills clinic']},{label:'incorrect date',terms:['12 november 2026','12 november']},
+  {label:'correct date',terms:['19 november 2026','19 november']},{label:'time',terms:['13:00','1:00 pm','1 pm','15:00','3:00 pm','3 pm']},
+  {label:'venue',terms:['library training room','training room']},{label:'correction deadline',terms:['6 november 2026','6 november']}
+ ]
+},
+{
+ title:'Confirm a Discussion Room Reservation', role:'Library service desk staff member', recipient:'A student project leader',
+ goal:'Confirm a discussion-room reservation and remind the user of basic conditions.', preferred:'email',
+ facts:['Room: Discussion Room 2','Reservation date: 10 November 2026','Time: 10:00–12:00','Maximum capacity: 8 people','Food and drinks are not permitted','Student ID is required at check-in'],
+ subjectKeywords:['reservation','discussion room','confirmation','room'],
+ details:[
+  {label:'room',terms:['discussion room 2','room 2']},{label:'date',terms:['10 november 2026','10 november']},
+  {label:'time',terms:['10:00','10 am','10 a.m','12:00','12 pm']},{label:'capacity',terms:['8 people','8 participants','maximum capacity']},
+  {label:'food/drink rule',terms:['food and drinks','food or drinks','no food','not permitted']},{label:'ID requirement',terms:['student id','identification','id card']}
+ ]
+},
+{
+ title:'Follow Up on a Missing Document', role:'Library administration assistant', recipient:'A university administrative officer',
+ goal:'Politely follow up because a required signed document has not yet been received.', preferred:'email',
+ facts:['Document: Signed Activity Approval Form','Original request sent: 27 October 2026','Activity date: 14 November 2026','Document is needed for room and equipment processing','Requested return date: 6 November 2026','A blank copy can be resent if needed'],
+ subjectKeywords:['follow-up','follow up','approval form','document','signed'],
+ details:[
+  {label:'document name',terms:['signed activity approval form','activity approval form','approval form']},{label:'original request date',terms:['27 october 2026','27 october']},
+  {label:'activity date',terms:['14 november 2026','14 november']},{label:'purpose of document',terms:['room and equipment','room processing','equipment processing']},
+  {label:'requested return date',terms:['6 november 2026','6 november']},{label:'resend option',terms:['resend','re-send','blank copy','another copy']}
+ ]
+},
+{
+ title:'Notify Users of an Orientation Schedule Change', role:'Library orientation coordinator', recipient:'Registered first-year students',
+ goal:'Inform registered participants that the orientation schedule has changed and clearly state the new arrangement.', preferred:'email',
+ facts:['Program: New Student Library Orientation','Original date: 9 November 2026','New date: 11 November 2026','New time: 14:00–15:30','Venue unchanged: Main Library, Seminar Room','Reason: campus-wide academic meeting'],
+ subjectKeywords:['schedule change','library orientation','orientation','new date','update'],
+ details:[
+  {label:'program name',terms:['new student library orientation','library orientation']},{label:'original date',terms:['9 november 2026','9 november']},
+  {label:'new date',terms:['11 november 2026','11 november']},{label:'new time',terms:['14:00','2 pm','2:00 pm','15:30','3:30 pm']},
+  {label:'venue',terms:['main library','seminar room']},{label:'reason',terms:['campus-wide academic meeting','academic meeting']}
+ ]
+},
+{
+ title:'Request Permission to Reproduce an Image', role:'Library exhibition committee member', recipient:'Rights holder of a historical photograph',
+ goal:'Formally request permission to reproduce one image for a non-commercial educational exhibition.', preferred:'letter',
+ facts:['Exhibition: Local Memory Through Archives','Image: Malang Railway Station, 1955','Use: one printed display panel','Event period: 4–18 December 2026','Purpose: non-commercial educational exhibition','Credit line will follow the rights holder’s requirement'],
+ subjectKeywords:['permission','reproduce','image','photograph','local memory'],
+ details:[
+  {label:'exhibition name',terms:['local memory through archives','local memory']},{label:'image identification',terms:['malang railway station','1955']},
+  {label:'intended use',terms:['printed display panel','display panel','printed panel']},{label:'event period',terms:['4 december 2026','18 december 2026','4–18 december']},
+  {label:'non-commercial purpose',terms:['non-commercial','educational exhibition','educational purpose']},{label:'credit commitment',terms:['credit line','credit','acknowledge']}
+ ]
+},
+{
+ title:'Respond to a Lost Library Card Report', role:'Circulation service staff member', recipient:'A university student',
+ goal:'Respond to a lost-card report and explain the immediate steps the user should take.', preferred:'email',
+ facts:['Card reported lost: 1 November 2026','User should temporarily block borrowing access','Replacement request is submitted at the circulation desk','Student ID is required','Replacement processing normally takes two working days','Digital account access remains available'],
+ subjectKeywords:['lost library card','library card','replacement','account'],
+ details:[
+  {label:'loss date',terms:['1 november 2026','1 november']},{label:'temporary block',terms:['block borrowing','temporarily block','borrowing access']},
+  {label:'replacement location',terms:['circulation desk']},{label:'ID requirement',terms:['student id','identification','id card']},
+  {label:'processing time',terms:['two working days','2 working days','two business days','2 business days']},{label:'digital access',terms:['digital account','online account','digital access']}
+ ]
+},
+{
+ title:'Notify a User That a Reserved Book Is Ready', role:'Circulation service staff member', recipient:'A student who placed a hold request',
+ goal:'Inform the user that a reserved book is available and explain the pickup deadline.', preferred:'email',
+ facts:['Book: Introduction to Knowledge Organization','Pickup location: Circulation Desk','Available from: 3 November 2026','Hold expires: 6 November 2026 at 16:00','Student ID is required','If not collected, the book will be offered to the next requester'],
+ subjectKeywords:['reserved book','hold','ready','pickup','knowledge organization'],
+ details:[
+  {label:'book title',terms:['introduction to knowledge organization','knowledge organization']},{label:'pickup location',terms:['circulation desk']},
+  {label:'available date',terms:['3 november 2026','3 november']},{label:'expiry deadline',terms:['6 november 2026','6 november','16:00','4 pm']},
+  {label:'ID requirement',terms:['student id','identification','id card']},{label:'next-requester condition',terms:['next requester','next user','offered to the next']}
+ ]
+},
+{
+ title:'Request Correction of a Vendor Invoice', role:'Library acquisitions staff member', recipient:'Customer service officer at a database vendor',
+ goal:'Request correction of an invoice because the institutional name and subscription period are incorrect.', preferred:'email',
+ facts:['Invoice number: INV-2026-418','Incorrect institution name: Faculty Library UM','Correct institution name: Universitas Negeri Malang Library','Incorrect subscription end date: 31 December 2026','Correct subscription end date: 31 December 2027','Revised invoice requested before: 10 November 2026'],
+ subjectKeywords:['invoice','correction','inv-2026-418','subscription','revised invoice'],
+ details:[
+  {label:'invoice number',terms:['inv-2026-418']},{label:'incorrect institution name',terms:['faculty library um']},
+  {label:'correct institution name',terms:['universitas negeri malang library']},{label:'incorrect end date',terms:['31 december 2026']},
+  {label:'correct end date',terms:['31 december 2027']},{label:'requested deadline',terms:['10 november 2026','10 november']}
+ ]
+},
+{
+ title:'Report Damaged Equipment', role:'Library technology coordinator', recipient:'Faculty facilities unit',
+ goal:'Formally report damaged equipment and request inspection before the next scheduled class.', preferred:'letter',
+ facts:['Equipment: Interactive display in Library Innovation Lab','Problem: screen powers on but touch function does not respond','Issue first observed: 30 October 2026','Next class using the room: 9 November 2026','Inspection requested before: 8 November 2026','Photos of the equipment are available as supporting documentation'],
+ subjectKeywords:['damaged equipment','interactive display','inspection','library innovation lab','maintenance'],
+ details:[
+  {label:'equipment',terms:['interactive display']},{label:'location',terms:['library innovation lab','innovation lab']},
+  {label:'problem',terms:['touch function','touch screen','does not respond','not responding']},{label:'issue date',terms:['30 october 2026','30 october']},
+  {label:'inspection deadline',terms:['8 november 2026','8 november']},{label:'supporting photos',terms:['photos','photographs','supporting documentation']}
+ ]
+},
+{
+ title:'Request Approval for Temporary Educational Signage', role:'Library learning-support staff member', recipient:'Head of library services',
+ goal:'Formally request approval to install temporary educational signage in the library.', preferred:'letter',
+ facts:['Signage theme: How to Evaluate Online Information','Installation area: Ground-floor learning zone','Display period: 16–27 November 2026','Materials: six A3 posters with QR codes','No walls will be permanently altered','Staff will remove all materials after the display period'],
+ subjectKeywords:['approval','signage','online information','posters','learning zone'],
+ details:[
+  {label:'signage theme',terms:['how to evaluate online information','evaluate online information']},{label:'installation area',terms:['ground-floor learning zone','ground floor learning zone','learning zone']},
+  {label:'display period',terms:['16 november 2026','27 november 2026','16–27 november']},{label:'materials',terms:['six a3 posters','6 a3 posters','qr codes']},
+  {label:'no permanent alteration',terms:['no walls','not permanently altered','no permanent alteration']},{label:'removal commitment',terms:['remove all materials','remove the materials','after the display period']}
+ ]
+},
+{
+ title:'Respond to a Database Access Problem', role:'Reference and electronic resources librarian', recipient:'A postgraduate student',
+ goal:'Respond to a user who can log in to the library portal but cannot open full-text database results.', preferred:'email',
+ facts:['Database: ScienceDirect','Library portal login works','Full-text PDF link returns an access-denied message','Problem reported: 2 November 2026','User should send one example article title and screenshot','Staff will escalate to electronic resources support if required'],
+ subjectKeywords:['sciencedirect','database','access denied','full text','full-text'],
+ details:[
+  {label:'database',terms:['sciencedirect']},{label:'portal login status',terms:['portal login','login works','can log in']},
+  {label:'error',terms:['access denied','full-text pdf','full text pdf']},{label:'report date',terms:['2 november 2026','2 november']},
+  {label:'requested evidence',terms:['article title','screenshot']},{label:'possible escalation',terms:['electronic resources support','escalate','technical support']}
+ ]
+},
+{
+ title:'Confirm an Internship Orientation Schedule', role:'Library internship coordinator', recipient:'A student intern',
+ goal:'Confirm the intern’s first-day orientation schedule and preparation requirements.', preferred:'email',
+ facts:['Orientation date: 17 November 2026','Time: 08:30–10:00','Meeting point: Library Administration Office','Bring: student ID and internship letter','Dress code: smart casual','Contact person: Ms. Dinda, Internship Coordinator'],
+ subjectKeywords:['internship','orientation','first day','schedule','confirmation'],
+ details:[
+  {label:'orientation date',terms:['17 november 2026','17 november']},{label:'time',terms:['08:30','8:30','10:00','10 am']},
+  {label:'meeting point',terms:['library administration office','administration office']},{label:'required documents',terms:['student id','internship letter']},
+  {label:'dress code',terms:['smart casual']},{label:'contact person',terms:['ms. dinda','dinda','internship coordinator']}
+ ]
+},
+{
+ title:'Request Permission to Distribute a User Survey', role:'Student research team representative', recipient:'Head of library services',
+ goal:'Formally request permission to distribute a short academic survey in the library entrance area.', preferred:'letter',
+ facts:['Study topic: Students’ Use of Library Learning Spaces','Survey period: 23–27 November 2026','Location requested: library entrance area','Estimated completion time: 5 minutes per respondent','Participation will be voluntary','No personally identifying information will be collected'],
+ subjectKeywords:['permission','survey','library learning spaces','research','entrance area'],
+ details:[
+  {label:'study topic',terms:['students’ use of library learning spaces','students use of library learning spaces','library learning spaces']},
+  {label:'survey period',terms:['23 november 2026','27 november 2026','23–27 november']},{label:'requested location',terms:['library entrance area','entrance area']},
+  {label:'completion time',terms:['5 minutes','five minutes']},{label:'voluntary participation',terms:['voluntary','voluntarily']},{label:'privacy statement',terms:['no personally identifying information','no personal information','anonymous']}
+ ]
+},
+{
+ title:'Inform Participants of a Workshop Room Change', role:'Library training coordinator', recipient:'Registered workshop participants',
+ goal:'Inform participants that the workshop room has changed while all other details remain the same.', preferred:'email',
+ facts:['Workshop: Zotero for Beginners','Date: 20 November 2026','Time: 09:00–11:30','Original room: Training Room A','New room: Computer Lab 2','Participants should bring a laptop with Zotero installed'],
+ subjectKeywords:['room change','zotero','workshop','computer lab 2','update'],
+ details:[
+  {label:'workshop name',terms:['zotero for beginners','zotero']},{label:'date',terms:['20 november 2026','20 november']},
+  {label:'time',terms:['09:00','9 am','9:00','11:30']},{label:'original room',terms:['training room a']},
+  {label:'new room',terms:['computer lab 2']},{label:'preparation requirement',terms:['laptop','zotero installed','install zotero']}
+ ]
+},
+{
+ title:'Request Technical Support for a Library Webinar', role:'Library webinar coordinator', recipient:'University IT helpdesk',
+ goal:'Request technical support for an upcoming online library webinar.', preferred:'email',
+ facts:['Webinar: Finding Reliable Academic Sources','Date: 26 November 2026','Time: 13:00–15:00','Platform: Zoom','Expected participants: 120','Support requested: host setup, recording, and connection check','Technical rehearsal requested on: 24 November 2026'],
+ subjectKeywords:['technical support','webinar','zoom','academic sources','rehearsal'],
+ details:[
+  {label:'webinar title',terms:['finding reliable academic sources','academic sources']},{label:'date',terms:['26 november 2026','26 november']},
+  {label:'time',terms:['13:00','1 pm','15:00','3 pm']},{label:'platform',terms:['zoom']},
+  {label:'support needed',terms:['host setup','recording','connection check']},{label:'rehearsal date',terms:['24 november 2026','24 november']}
+ ]
+},
+{
+ title:'Ask a Lecturer to Verify a Course Reading List', role:'Subject librarian', recipient:'Course lecturer',
+ goal:'Ask the lecturer to verify a draft reading list before it is published to students.', preferred:'email',
+ facts:['Course: Information Retrieval','Draft list contains: 12 required readings','Two titles are currently unavailable through the library','Verification requested for required vs optional status','Publication date: 15 November 2026','Lecturer feedback requested by: 10 November 2026'],
+ subjectKeywords:['reading list','information retrieval','verify','verification','course readings'],
+ details:[
+  {label:'course name',terms:['information retrieval']},{label:'number of readings',terms:['12 required readings','12 readings']},
+  {label:'availability issue',terms:['two titles','2 titles','unavailable']},{label:'verification focus',terms:['required vs optional','required or optional','required and optional']},
+  {label:'publication date',terms:['15 november 2026','15 november']},{label:'feedback deadline',terms:['10 november 2026','10 november']}
+ ]
+},
+{
+ title:'Request an Extension of a Database Trial', role:'Electronic resources librarian', recipient:'Database vendor representative',
+ goal:'Request a short extension of a trial period because faculty evaluation is not yet complete.', preferred:'email',
+ facts:['Database: GlobalData Academic','Current trial ends: 7 November 2026','Requested new end date: 14 November 2026','Reason: faculty evaluation is still in progress','Current trial users: 46','Usage feedback will be shared after the evaluation'],
+ subjectKeywords:['trial extension','database trial','globaldata academic','extension','trial'],
+ details:[
+  {label:'database name',terms:['globaldata academic']},{label:'current end date',terms:['7 november 2026','7 november']},
+  {label:'requested end date',terms:['14 november 2026','14 november']},{label:'reason',terms:['faculty evaluation','evaluation is still in progress','evaluation']},
+  {label:'current users',terms:['46 users','46']},{label:'feedback commitment',terms:['usage feedback','share feedback','feedback will be shared']}
+ ]
+}
+];
+
+let idx=Math.floor(Math.random()*scenarios.length),mode='email',scores=[];const $=s=>document.querySelector(s);
+function render(){
+ const s=scenarios[idx];
+ $('#scenarioNo').textContent=`Scenario ${idx+1} of ${scenarios.length}`;
+ $('#title').textContent=s.title;$('#role').textContent=s.role;$('#recipient').textContent=s.recipient;$('#goal').textContent=s.goal;
+ $('#facts').innerHTML=s.facts.map(x=>`<li>${x}</li>`).join('');$('#to').value=s.recipient;updateMode();
+}
+function updateMode(){
+ document.querySelectorAll('.choice').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
+ $('#draftTitle').textContent=`Draft your ${mode==='email'?'professional email':'formal correspondence'}`;$('#recipientLabel').textContent=mode==='email'?'To':'Recipient';
+ const good=mode===scenarios[idx].preferred;$('#advice').className='advice '+(good?'good':'warn');
+ $('#advice').textContent=good?'Good choice for this scenario. Now write with the recipient and purpose in mind.':'This channel may be possible, but it is not the strongest fit for the level of formality in this scenario.';
+}
+function norm(x){return (x||'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim()}
+function hasAny(text,terms){return terms.some(t=>text.includes(norm(t)))}
+function firstWords(text,n=55){return norm(text).split(/\s+/).slice(0,n).join(' ')}
+function addItem(items,level,label,fb,score){items.push({level,label,fb,score});return score}
+function analyze(){
+ const s=scenarios[idx],subject=$('#subject').value.trim(),msg=$('#message').value.trim();
+ const subj=norm(subject), body=norm(msg), early=firstWords(msg,55), all=subj+' '+body;
+ let score=0,items=[];
+
+ // 1. Channel fit — 6
+ if(mode===s.preferred) score+=addItem(items,'good','Channel choice','The channel fits the scenario and level of formality.',6);
+ else score+=addItem(items,'warn','Channel choice','Reconsider whether this situation calls for routine email or more formal institutional correspondence.',2);
+
+ // 2. Subject — 12
+ const generic=/^(invitation|important|question|request|information|confirmation|hello|hi|workshop|follow[- ]?up)$/i.test(subject.trim());
+ const subjectHits=s.subjectKeywords.filter(k=>subj.includes(norm(k))).length;
+ if(subject.length>=18 && !generic && subjectHits>=2) score+=addItem(items,'good','Specific subject line','The subject previews both the purpose and the context.',12);
+ else if(subject.length>=10 && !generic && subjectHits>=1) score+=addItem(items,'warn','Subject line needs more precision','The subject gives some context, but make the purpose and event/topic more specific.',7);
+ else score+=addItem(items,'bad','Subject line is too generic','Use a subject that lets the recipient understand the action and context before opening the message.',2);
+
+ // 3. Greeting — 10
+ const hasGreeting=/^(dear|hello|good morning|good afternoon)\b/im.test(msg.trim());
+ const genericGreeting=/\bdear\s+(sir|madam|sir\/madam|sir or madam)\b/i.test(msg);
+ if(hasGreeting && !genericGreeting) score+=addItem(items,'good','Recipient-appropriate greeting','A professional greeting is present and not overly generic.',10);
+ else if(hasGreeting && genericGreeting) score+=addItem(items,'warn','Greeting is formal but generic','When the recipient’s name or professional title is known, address them more specifically.',5);
+ else score+=addItem(items,'bad','Greeting is missing or too casual','Open with a professional salutation appropriate to the recipient.',1);
+
+ // 4. Identity / context — 10
+ const weakIdentity=/\b(i am|i'm|we are) from (the )?library\b/i.test(msg);
+ const identitySignals=/(library|self access center|sac|faculty|universitas|university|committee|coordinator|staff|assistant|representative)/i.test(msg);
+ const introSignals=/(my name is|i am|i'm|on behalf of|we are writing|i am writing|as the|as a)/i.test(early);
+ if(identitySignals && introSignals && !weakIdentity) score+=addItem(items,'good','Sender identity and context','The reader can understand who is writing and the institutional context.',10);
+ else if(identitySignals || introSignals) score+=addItem(items,'warn','Sender identity could be clearer','Identify your role/unit or institutional context more precisely instead of using a vague introduction.',5);
+ else score+=addItem(items,'bad','Sender context is unclear','Briefly establish who you are and why you are an appropriate person to send this message.',1);
+
+ // 5. Purpose early — 15
+ const purposeVerb=/(writing to|would like to|wish to|invite|request|confirm|follow up|follow-up|respond|apolog|inform|seek permission|ask permission)/i.test(early);
+ const weakPurpose=/\b(i want|we want|we need you)\b/i.test(early);
+ if(purposeVerb && !weakPurpose) score+=addItem(items,'good','Purpose stated early','The communication purpose is clear near the beginning.',15);
+ else if(purposeVerb || weakPurpose) score+=addItem(items,'warn','Purpose is understandable but weakly framed','State the purpose early using professional, reader-focused wording rather than “I/we want…”.',9);
+ else score+=addItem(items,'bad','Purpose is not clear enough','The recipient should know why you are writing within the opening lines.',3);
+
+ // 6. Essential details — 20
+ let found=[],missing=[];
+ for(const d of s.details){(hasAny(all,d.terms)?found:missing).push(d.label)}
+ const ratio=found.length/s.details.length;
+ const detailScore=Math.round(20*ratio);
+ score+=detailScore;
+ if(ratio>=.9) items.push({level:'good',label:'Essential details',fb:`${found.length}/${s.details.length} key details are clear.`,score:detailScore});
+ else if(ratio>=.6) items.push({level:'warn',label:'Essential details',fb:`${found.length}/${s.details.length} key details detected. Check: ${missing.join(', ')}.`,score:detailScore});
+ else items.push({level:'bad',label:'Essential details',fb:`Important information is missing or unclear: ${missing.join(', ')}.`,score:detailScore});
+
+ // 7. Action/request — 12
+ const politeAction=/(could you|would you|would you be available|would appreciate|please let me know|we would be grateful|we would be pleased|may we|could we|we kindly request)/i.test(msg);
+ const bluntAction=/(please reply soon|please answer|answer fast|reply fast|reply immediately|you must|we need your confirmation|please reply before)/i.test(msg);
+ if(politeAction && !bluntAction) score+=addItem(items,'good','Clear and polite action','The recipient knows what to do next, and the request is framed professionally.',12);
+ else if(politeAction || /\bplease\b/i.test(msg)) score+=addItem(items,'warn','Action is clear but could be more professional','Make the requested action explicit while keeping the wording courteous and non-demanding.',7);
+ else score+=addItem(items,'bad','Next action is unclear','State what response, confirmation, or action you need from the recipient.',2);
+
+ // 8. Closing + signature — 10
+ const strongClose=/(kind regards|best regards|sincerely|respectfully|warm regards)/i.test(msg);
+ const weakClose=/(thank you|thanks)/i.test(msg);
+ const lines=msg.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+ const signatureLines=lines.slice(-3).filter(x=>!/(kind regards|best regards|sincerely|respectfully|warm regards|thank you|thanks)[,.]?$/i.test(x));
+ const sig=signatureLines.join(' ');
+ const genericSig=/^(library staff|staff|student|committee|library)$/i.test(sig.trim());
+ const senderSpecific=/(sherly|coordinator|staff member|program assistant|committee representative|faculty|universitas|university|self access center|sac|department|unit)/i.test(sig) && !genericSig;
+ if(strongClose && senderSpecific) score+=addItem(items,'good','Professional closing and signature','The message closes professionally and identifies the sender.',10);
+ else if(strongClose || weakClose) score+=addItem(items,'warn','Closing/signature needs strengthening','Use a professional valediction and identify the sender with a meaningful name, role, or unit.',5);
+ else score+=addItem(items,'bad','Professional closing is missing','End with an appropriate valediction and clear sender identification.',1);
+
+ // 9. Tone — 10
+ const toneProblems=[];
+ const toneRules=[
+  [/\b(i want|we want)\b/i,'“I/we want” can sound sender-centred'],
+  [/\bplease reply soon\b/i,'“Please reply soon” may sound demanding'],
+  [/\b(answer fast|reply fast|asap)\b/i,'urgent wording is too abrupt'],
+  [/\bwe need you\b/i,'“We need you” is too direct'],
+  [/\bcome and become (the )?speaker\b/i,'this phrase is unnatural for a professional invitation'],
+  [/\bsend me\b/i,'“Send me” may be too direct'],
+  [/\byou must\b/i,'“You must” is overly forceful'],
+  [/\bmaybe around\b/i,'uncertain scheduling language weakens professionalism'],
+  [/\bhey\b/i,'“Hey” is too casual for this context']
+ ];
+ for(const [re,label] of toneRules) if(re.test(msg)) toneProblems.push(label);
+ if(toneProblems.length===0) score+=addItem(items,'good','Professional tone','No obvious tone or register problems were detected.',10);
+ else if(toneProblems.length===1) score+=addItem(items,'warn','Tone needs refinement',toneProblems[0]+'.',5);
+ else score+=addItem(items,'bad','Tone is not consistently professional',toneProblems.slice(0,2).join('; ')+'.',1);
+
+ // 10. Clarity / readability — 5
+ const words=body.split(/\s+/).filter(Boolean).length;
+ const paragraphs=msg.split(/\n\s*\n/).filter(x=>x.trim()).length;
+ if(words>=55 && words<=220 && paragraphs>=2) score+=addItem(items,'good','Clarity and organization','The message is reasonably concise and organized into readable sections.',5);
+ else if(words>=35 && words<=280) score+=addItem(items,'warn','Clarity and organization','The draft is readable, but paragraphing or concision could be improved.',3);
+ else score+=addItem(items,'bad','Clarity and organization','The draft may be too short, too long, or insufficiently organized for the task.',1);
+
+ return {score:Math.max(0,Math.min(100,score)),items};
+}
+function show(){
+ const r=analyze();scores.push(r.score);$('#feedback').hidden=false;$('#score').textContent=r.score;
+ const icon={good:'✓',warn:'!',bad:'×'};
+ $('#checks').innerHTML=r.items.map(x=>`<div class="check"><div class="dot ${x.level}">${icon[x.level]}</div><div><b>${x.label}</b><p>${x.fb}</p></div></div>`).join('');
+ $('#attempts').textContent=scores.length>1?`First draft ${scores[0]} → latest ${scores[scores.length-1]}`:'';
+}
+document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;updateMode()}));
+$('#checkBtn').addEventListener('click',show);
+$('#nextBtn').addEventListener('click',()=>{let next=idx;while(next===idx && scenarios.length>1){next=Math.floor(Math.random()*scenarios.length)}idx=next;mode='email';scores=[];$('#subject').value='';$('#message').value='';$('#feedback').hidden=true;$('#attempts').textContent='';render()});
+render();
+</script>
+</body></html>
