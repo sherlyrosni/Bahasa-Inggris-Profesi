@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Lab | Professional English</title>
+  <meta name="description" content="Interactive Career Lab for Professional English: vacancy analysis, ATS resume relevance, interview planning, and unlimited self-practice." />
+  <style>
+    :root{
+      --blue:#1f5fbf;
+      --blue-dark:#174a96;
+      --blue-50:#f4f8ff;
+      --blue-100:#e9f1ff;
+      --blue-200:#d9e7ff;
+      --ink:#172033;
+      --muted:#667085;
+      --line:#dfe5ef;
+      --soft:#f8fafc;
+      --good:#177245;
+      --good-bg:#ecf8f1;
+      --warn:#a15c00;
+      --warn-bg:#fff7e8;
+      --bad:#b42318;
+      --bad-bg:#fff0ef;
+      --shadow:0 10px 30px rgba(21,44,84,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .topbar{
+      position:sticky; top:0; z-index:30;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:1180px; margin:auto; padding:14px 22px;
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .brand-mark{
+      width:38px; height:38px; border-radius:11px; display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--blue),#4d86dd); color:white; font-weight:800;
+      box-shadow:0 8px 18px rgba(31,95,191,.22);
+    }
+    .brand-copy strong{display:block; font-size:14px; letter-spacing:.01em}
+    .brand-copy span{display:block; font-size:12px; color:var(--muted)}
+    .nav{display:flex; flex-wrap:wrap; gap:8px}
+    .nav a{
+      text-decoration:none; font-size:13px; color:#475467; padding:8px 10px; border-radius:9px;
+    }
+    .nav a:hover{background:var(--blue-50); color:var(--blue-dark)}
+    .hero{
+      background:
+        radial-gradient(circle at 85% 15%, rgba(31,95,191,.12), transparent 26%),
+        linear-gradient(180deg,#fff 0%, #f8fbff 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-inner{
+      max-width:1180px; margin:auto; padding:72px 22px 60px;
+      display:grid; grid-template-columns:1.25fr .75fr; gap:42px; align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; font-weight:800; letter-spacing:.11em; text-transform:uppercase;
+      color:var(--blue-dark); background:var(--blue-100); padding:7px 10px; border-radius:999px;
+    }
+    h1{font-size:clamp(38px,5vw,66px); line-height:1.02; margin:18px 0 16px; letter-spacing:-.04em}
+    .hero p{font-size:18px; color:#475467; max-width:760px; margin:0 0 26px}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      border:0; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      min-height:44px; padding:11px 16px; border-radius:11px; font-weight:750; font-size:14px;
+      transition:.2s ease;
+    }
+    .btn-primary{background:var(--blue); color:white; box-shadow:0 8px 18px rgba(31,95,191,.2)}
+    .btn-primary:hover{background:var(--blue-dark); transform:translateY(-1px)}
+    .btn-secondary{background:#fff; color:var(--blue-dark); border:1px solid var(--blue-200)}
+    .btn-secondary:hover{background:var(--blue-50)}
+    .btn-ghost{background:transparent; color:var(--blue-dark); border:1px solid var(--line)}
+    .hero-card{
+      border:1px solid var(--blue-200); background:rgba(255,255,255,.88); border-radius:24px;
+      padding:22px; box-shadow:var(--shadow);
+    }
+    .flow-step{display:flex; gap:14px; padding:13px 0; border-bottom:1px solid #edf1f7}
+    .flow-step:last-child{border-bottom:0}
+    .step-no{
+      min-width:34px; height:34px; border-radius:10px; background:var(--blue-100);
+      display:grid; place-items:center; color:var(--blue-dark); font-weight:800;
+    }
+    .flow-step strong{display:block; font-size:14px}
+    .flow-step span{display:block; font-size:12px; color:var(--muted)}
+    main{max-width:1180px; margin:auto; padding:36px 22px 80px}
+    .section{padding:36px 0; scroll-margin-top:82px}
+    .section-head{display:flex; justify-content:space-between; gap:24px; align-items:end; margin-bottom:18px}
+    .kicker{font-size:12px; color:var(--blue-dark); font-weight:800; letter-spacing:.09em; text-transform:uppercase}
+    h2{font-size:30px; letter-spacing:-.02em; margin:3px 0}
+    .section-head p{max-width:680px; color:var(--muted); margin:0}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .card{
+      border:1px solid var(--line); border-radius:var(--radius); background:#fff; padding:20px;
+      box-shadow:0 4px 14px rgba(23,32,51,.035);
+    }
+    .card.soft{background:var(--soft)}
+    .card.blue{background:var(--blue-50); border-color:var(--blue-200)}
+    .label{font-size:11px; font-weight:850; letter-spacing:.09em; text-transform:uppercase; color:var(--blue-dark)}
+    .vacancy-title{font-size:22px; margin:4px 0 8px}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0}
+    .pill{font-size:12px; padding:5px 8px; border-radius:999px; background:var(--blue-100); color:var(--blue-dark); font-weight:700}
+    .muted{color:var(--muted)}
+    .tiny{font-size:12px}
+    .keywords{display:flex; flex-wrap:wrap; gap:7px; margin-top:12px}
+    .keyword{font-size:12px; padding:6px 9px; background:#fff; border:1px solid var(--blue-200); border-radius:9px; color:#38527a}
+    textarea, input, select{
+      width:100%; font:inherit; color:var(--ink); background:#fff;
+      border:1px solid #cfd7e6; border-radius:11px; padding:11px 12px; outline:none;
+      transition:.15s ease;
+    }
+    textarea:focus, input:focus, select:focus{border-color:#7aa3e0; box-shadow:0 0 0 3px rgba(31,95,191,.09)}
+    textarea{min-height:160px; resize:vertical}
+    .field{margin-bottom:14px}
+    .field label{display:block; font-size:13px; font-weight:750; margin-bottom:6px}
+    .helper{font-size:12px; color:var(--muted); margin-top:4px}
+    .score-wrap{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .score{
+      width:94px; height:94px; border-radius:50%; display:grid; place-items:center;
+      background:conic-gradient(var(--blue) calc(var(--score)*1%), #e8edf4 0);
+      position:relative;
+    }
+    .score:after{
+      content:""; position:absolute; width:72px; height:72px; border-radius:50%; background:#fff;
+    }
+    .score strong{z-index:1; font-size:23px}
+    .diagnostics{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:16px}
+    .diag{border-radius:12px; padding:12px 13px; border:1px solid var(--line); font-size:13px}
+    .diag strong{display:block; margin-bottom:3px}
+    .diag.good{background:var(--good-bg); border-color:#b7e2c9}
+    .diag.warn{background:var(--warn-bg); border-color:#f2d09b}
+    .diag.bad{background:var(--bad-bg); border-color:#f1b7b2}
+    .question-box{
+      font-size:24px; line-height:1.35; font-weight:770; letter-spacing:-.02em;
+      padding:25px; border:1px solid var(--blue-200); background:linear-gradient(180deg,#fff,#f7faff);
+      border-radius:18px; min-height:126px; display:flex; align-items:center;
+    }
+    .qmeta{margin-top:10px; font-size:12px; color:var(--muted)}
+    .framework-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
+    .tab-btn{padding:8px 11px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-weight:750}
+    .tab-btn.active{background:var(--blue); color:#fff; border-color:var(--blue)}
+    .framework{display:none}
+    .framework.active{display:block}
+    .planner-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .timer{
+      font-size:46px; font-weight:850; letter-spacing:-.04em; margin:4px 0 8px;
+      color:var(--blue-dark);
+    }
+    .record-state{
+      display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:750; color:var(--muted)
+    }
+    .dot{width:9px; height:9px; border-radius:50%; background:#98a2b3}
+    .recording .dot{background:#d92d20; box-shadow:0 0 0 6px rgba(217,45,32,.1)}
+    audio{width:100%; margin-top:12px}
+    .notice{
+      border-left:4px solid var(--blue); background:var(--blue-50); padding:13px 15px; border-radius:10px;
+      font-size:13px; color:#314766;
+    }
+    .footer{
+      border-top:1px solid var(--line); padding:28px 22px 42px; color:var(--muted); font-size:12px;
+    }
+    .footer-inner{max-width:1180px; margin:auto; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap}
+    .hide{display:none!important}
+    @media (max-width:900px){
+      .hero-inner,.grid-2,.grid-3,.planner-grid{grid-template-columns:1fr}
+      .nav{display:none}
+      .hero-inner{padding-top:48px}
+      .diagnostics{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../">
+        <div class="brand-mark">PE</div>
+        <div class="brand-copy">
+          <strong>Professional English Lab</strong>
+          <span>Library & Information Science</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="#vacancy">Vacancy</a>
+        <a href="#resume">Resume Check</a>
+        <a href="#questions">Interview Questions</a>
+        <a href="#planner">Answer Planner</a>
+        <a href="#practice">Practice Room</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Meeting 12 · Career Lab</span>
+        <h1>Build the evidence.<br/>Practice the answer.</h1>
+        <p>
+          Use a realistic vacancy, check whether your resume actually matches it, plan evidence-based answers,
+          and practise speaking before the real interview.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#vacancy">Start with a vacancy</a>
+          <a class="btn btn-secondary" href="#practice">Go to Practice Room</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="flow-step"><div class="step-no">1</div><div><strong>Read the vacancy</strong><span>Notice role, responsibilities, and keywords.</span></div></div>
+        <div class="flow-step"><div class="step-no">2</div><div><strong>Check your resume</strong><span>Relevant evidence matters more than generic claims.</span></div></div>
+        <div class="flow-step"><div class="step-no">3</div><div><strong>Plan your answer</strong><span>Use Answer–Evidence–Relevance or STAR.</span></div></div>
+        <div class="flow-step"><div class="step-no">4</div><div><strong>Practise speaking</strong><span>Record locally or continue with an AI interview platform.</span></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="vacancy">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Step 1</div>
+          <h2>Vacancy Explorer</h2>
+          <p>Practice vacancies in this lab are intentionally different from the assessed Tugas 4 vacancy bank.</p>
+        </div>
+        <button class="btn btn-secondary" id="randomVacancy">↻ Random vacancy</button>
+      </div>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <div class="label" id="vacancyCode">Practice Vacancy</div>
+          <div class="vacancy-title" id="vacancyTitle">—</div>
+          <div class="meta">
+            <span class="pill" id="vacancyType">Internship</span>
+            <span class="pill" id="vacancyContext">Information Service</span>
+          </div>
+          <p id="vacancyDescription" class="muted"></p>
+          <div class="label">Keywords to notice</div>
+          <div class="keywords" id="vacancyKeywords"></div>
+        </div>
+        <div class="card">
+          <div class="label">Before you write anything</div>
+          <h3 style="margin:5px 0 10px">What does this role actually need?</h3>
+          <div class="field">
+            <label>Top 3 responsibilities</label>
+            <textarea id="respNotes" placeholder="Write the three responsibilities you think matter most..."></textarea>
+          </div>
+          <div class="field">
+            <label>Your strongest evidence</label>
+            <textarea id="evidenceNotes" placeholder="Which academic project, campus activity, volunteer work, part-time job, or skill could prove that you fit this role?"></textarea>
+          </div>
+          <div class="notice">Tip: “I am responsible” is a claim. “I organized participant records for a campus event” is evidence.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resume">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Step 2</div>
+          <h2>Resume Relevance Check</h2>
+          <p>Paste the text of your resume. This checker gives formative diagnostic feedback; it does not replace lecturer assessment.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="field">
+            <label>Paste your resume text</label>
+            <textarea id="resumeText" style="min-height:360px" placeholder="Paste your resume text here. You can remove your phone number and email for privacy."></textarea>
+          </div>
+          <button class="btn btn-primary" id="checkResume">Check relevance</button>
+        </div>
+
+        <div class="card soft">
+          <div class="score-wrap">
+            <div class="score" id="scoreCircle" style="--score:0"><strong id="scoreValue">0</strong></div>
+            <div>
+              <div class="label">Practice score</div>
+              <h3 style="margin:3px 0">Resume–Vacancy Fit</h3>
+              <p class="muted tiny" style="margin:0">Based on keyword alignment, section coverage, evidence language, and common weak patterns.</p>
+            </div>
+          </div>
+          <div class="diagnostics" id="diagnostics">
+            <div class="diag warn"><strong>Ready when you are</strong>Paste your resume and click “Check relevance”.</div>
+          </div>
+          <div class="notice" style="margin-top:14px">This tool checks text patterns only. It cannot reliably judge visual ATS formatting, truthfulness, or actual recruiter decisions.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="questions">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Step 3</div>
+          <h2>Interview Question Bank</h2>
+          <p>Generate questions connected to the current practice vacancy. Questions vary across motivation, evidence, behaviour, and role situations.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <div class="question-box" id="questionBox">Tell me about yourself.</div>
+          <div class="qmeta" id="questionMeta">Category: Professional introduction</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
+            <button class="btn btn-primary" id="newQuestion">New question</button>
+            <button class="btn btn-secondary" id="copyQuestion">Copy question</button>
+          </div>
+        </div>
+        <div class="card blue">
+          <div class="label">Answer rule</div>
+          <h3 style="margin:5px 0 10px">Do not stop at the claim.</h3>
+          <p class="muted">For strengths, motivation, and relevant skills:</p>
+          <p><strong>ANSWER → EVIDENCE → RELEVANCE</strong></p>
+          <p class="muted">For experience and challenge questions:</p>
+          <p><strong>SITUATION → ACTION → RESULT</strong></p>
+          <p class="tiny muted">Your evidence can come from class projects, committees, organizations, volunteering, independent projects, or part-time work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planner">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Step 4</div>
+          <h2>Answer Planner</h2>
+          <p>Plan with keywords, not a full memorized script. Use the framework that matches the question.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="framework-tabs">
+          <button class="tab-btn active" data-tab="aer">Answer · Evidence · Relevance</button>
+          <button class="tab-btn" data-tab="star">Situation · Action · Result</button>
+        </div>
+
+        <div class="framework active" id="aer">
+          <div class="planner-grid">
+            <div class="field"><label>Answer</label><textarea id="aerAnswer" placeholder="Your direct answer in 1–2 sentences..."></textarea></div>
+            <div class="field"><label>Evidence</label><textarea id="aerEvidence" placeholder="A specific example that proves the answer..."></textarea></div>
+            <div class="field"><label>Relevance</label><textarea id="aerRelevance" placeholder="Why is this useful for the current role?"></textarea></div>
+            <div class="field"><label>Keywords only</label><textarea id="aerKeywords" placeholder="Write 4–8 keywords you may look at during practice."></textarea></div>
+          </div>
+        </div>
+
+        <div class="framework" id="star">
+          <div class="planner-grid">
+            <div class="field"><label>Situation</label><textarea id="starSituation" placeholder="Brief context. What was happening?"></textarea></div>
+            <div class="field"><label>Action</label><textarea id="starAction" placeholder="What did YOU specifically do?"></textarea></div>
+            <div class="field"><label>Result</label><textarea id="starResult" placeholder="What happened, changed, or was produced?"></textarea></div>
+            <div class="field"><label>Role connection</label><textarea id="starRole" placeholder="How does this example support your fit for the role?"></textarea></div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn btn-secondary" id="savePlanner">Save on this device</button>
+          <button class="btn btn-ghost" id="clearPlanner">Clear planner</button>
+        </div>
+        <div class="helper" id="saveMessage"></div>
+      </div>
+    </section>
+
+    <section class="section" id="practice">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Step 5</div>
+          <h2>Practice Room</h2>
+          <p>Unlimited self-practice in your browser. Record your answer locally, listen back, revise, and try again.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <div class="label">Current interview question</div>
+          <h3 id="practiceQuestion" style="font-size:24px; line-height:1.35; margin:8px 0 12px">Tell me about yourself.</h3>
+          <button class="btn btn-secondary" id="practiceNewQuestion">↻ New question</button>
+          <div style="margin-top:22px">
+            <div class="label">Answer timer</div>
+            <div class="timer" id="timerDisplay">01:30</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap">
+              <button class="btn btn-primary" id="startTimer">Start 90 sec</button>
+              <button class="btn btn-secondary" id="resetTimer">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">Local audio practice</div>
+          <h3 style="margin:5px 0 8px">Record → Listen → Improve</h3>
+          <p class="tiny muted">Your recording stays in your browser session and is not uploaded by this page.</p>
+          <div class="record-state" id="recordState"><span class="dot"></span><span>Not recording</span></div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px">
+            <button class="btn btn-primary" id="startRecording">Start recording</button>
+            <button class="btn btn-secondary" id="stopRecording" disabled>Stop</button>
+          </div>
+          <audio id="audioPlayback" controls class="hide"></audio>
+          <div id="recordingError" class="helper"></div>
+
+          <hr style="border:0; border-top:1px solid var(--line); margin:22px 0">
+          <div class="label">Want AI feedback?</div>
+          <p class="tiny muted">Continue with an external interview-practice platform. Availability and limits may change over time.</p>
+          <a class="btn btn-secondary" href="https://huru.ai/" target="_blank" rel="noopener">Open Huru ↗</a>
+        </div>
+      </div>
+
+      <div class="card soft" style="margin-top:16px">
+        <div class="label">Self-review after every answer</div>
+        <div class="grid-3" style="margin-top:10px">
+          <div><strong>1. Did I answer directly?</strong><p class="tiny muted">The first sentence should address the question.</p></div>
+          <div><strong>2. Did I give evidence?</strong><p class="tiny muted">Use a specific project, activity, responsibility, or result.</p></div>
+          <div><strong>3. Did I connect to the role?</strong><p class="tiny muted">Show why the example matters for this vacancy.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card blue">
+        <div class="label">Remember</div>
+        <h2 style="margin:5px 0 8px">You do not need years of job experience to answer professionally.</h2>
+        <p class="muted" style="max-width:900px">You need relevant, truthful evidence. A class project, committee task, volunteer activity, or independent project can become a strong answer when you explain what you did, how you did it, and why it matters for the role.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>Professional English Lab · Career Lab · Meeting 12</div>
+      <div>Formative practice tool · No personal data is sent by this page.</div>
+    </div>
+  </footer>
+
+  <script>
+    const vacancies = [
+      {
+        title:"Museum Information Desk Intern", type:"Internship", context:"Visitor Information",
+        description:"Assist visitors with basic enquiries, explain museum resources and directions, update simple visitor-information materials, and document recurring questions.",
+        keywords:["visitor service","clear communication","information accuracy","documentation","orientation"]
+      },
+      {
+        title:"Digital Repository Project Assistant", type:"Project Assistant", context:"Repository & Metadata",
+        description:"Support uploading and organizing digital materials, check basic metadata completeness, follow file-naming rules, and flag inconsistent records for review.",
+        keywords:["metadata","digital files","accuracy","organization","quality checking"]
+      },
+      {
+        title:"Student Research Help Desk Assistant", type:"Part-time", context:"Academic Support",
+        description:"Guide students to appropriate starting points for research, explain basic search options, refer complex questions to staff, and record common enquiry topics.",
+        keywords:["user needs","information searching","communication","referral","service records"]
+      },
+      {
+        title:"Knowledge Management Project Intern", type:"Internship", context:"Organizational Knowledge",
+        description:"Help organize internal documents, maintain a simple knowledge index, summarize recurring project information, and support documentation standards.",
+        keywords:["knowledge organization","summarizing","documentation","file management","consistency"]
+      },
+      {
+        title:"Community Reading Program Assistant", type:"Volunteer / Internship", context:"Community Service",
+        description:"Support reading activities, prepare participant materials, communicate schedules, document attendance, and assist facilitators during community sessions.",
+        keywords:["community engagement","communication","organization","event support","documentation"]
+      },
+      {
+        title:"Metadata Quality Assistant", type:"Project Role", context:"Data Quality",
+        description:"Review selected metadata fields for completeness and consistency, compare records with source information, record errors, and prepare a short quality report.",
+        keywords:["metadata","attention to detail","quality control","reporting","accuracy"]
+      },
+      {
+        title:"Cultural Heritage Digitization Assistant", type:"Internship", context:"Digital Heritage",
+        description:"Prepare materials for digitization, follow handling procedures, apply file-naming conventions, record basic descriptive information, and organize output files.",
+        keywords:["digitization","responsible handling","file naming","documentation","organization"]
+      },
+      {
+        title:"Content Curation Assistant", type:"Internship", context:"Digital Information",
+        description:"Identify reliable sources for short curated content, organize selected information, write concise summaries, and check source attribution before publication.",
+        keywords:["source evaluation","curation","concise writing","attribution","information accuracy"]
+      },
+      {
+        title:"Library Outreach Program Assistant", type:"Internship", context:"Outreach",
+        description:"Help prepare outreach materials, coordinate participant information, support promotional communication, and assist with event documentation.",
+        keywords:["outreach","communication","coordination","promotion","documentation"]
+      },
+      {
+        title:"Accessibility Information Assistant", type:"Project Assistant", context:"Inclusive Information",
+        description:"Review basic user-facing information for clarity and accessibility, organize feedback, identify common barriers, and help prepare revised guidance materials.",
+        keywords:["accessibility","user perspective","clear writing","feedback","information design"]
+      },
+      {
+        title:"Reading Promotion Content Assistant", type:"Internship", context:"Reading Engagement",
+        description:"Prepare short book-related content, organize recommendation lists, verify bibliographic details, and assist with reading-promotion campaigns.",
+        keywords:["content writing","bibliographic accuracy","reading promotion","organization","digital communication"]
+      },
+      {
+        title:"Public Information Service Trainee", type:"Trainee", context:"Public Information",
+        description:"Respond to routine public-information requests, identify appropriate official sources, document enquiries, and escalate requests that require specialist handling.",
+        keywords:["public information","source selection","service communication","documentation","referral"]
+      },
+      {
+        title:"Research Data Documentation Assistant", type:"Project Assistant", context:"Research Support",
+        description:"Organize project documentation, maintain data dictionaries and file lists, check naming consistency, and prepare short summaries for the research team.",
+        keywords:["research documentation","data organization","accuracy","summarizing","file management"]
+      },
+      {
+        title:"Academic Event Information Assistant", type:"Temporary Role", context:"Event Information",
+        description:"Prepare participant information, answer routine event enquiries, update schedules, support registration records, and communicate approved changes clearly.",
+        keywords:["event communication","information accuracy","registration","organization","user support"]
+      },
+      {
+        title:"Digital Preservation Project Assistant", type:"Project Assistant", context:"Digital Preservation",
+        description:"Help inventory digital files, document file formats and locations, apply naming rules, identify duplicates, and support basic preservation documentation.",
+        keywords:["digital preservation","inventory","file management","documentation","attention to detail"]
+      }
+    ];
+
+    const questionPools = {
+      intro:[
+        "Tell me about yourself and the experiences that are most relevant to this role.",
+        "Walk me through the part of your background that best prepares you for this position."
+      ],
+      motivation:[
+        "Why are you interested in this position?",
+        "What attracted you to this role?",
+        "Which responsibility in this vacancy interests you most, and why?"
+      ],
+      evidence:[
+        "Tell me about an academic project that demonstrates a skill relevant to this role.",
+        "What is one strength you would bring to this position? Give me a specific example.",
+        "Describe an experience where you had to organize information carefully.",
+        "Give me an example of when you had to communicate information clearly to another person.",
+        "Tell me about a time you worked with others to complete a task."
+      ],
+      behavior:[
+        "Tell me about a challenge you faced in a class project or organization. What did you do?",
+        "Describe a situation where you had to work accurately under a deadline.",
+        "Tell me about a time you received feedback. How did you respond?",
+        "Describe a situation where a team member had a different idea from yours. What happened?"
+      ],
+      role:[
+        "A user asks you a question but you are not sure of the answer. What would you do?",
+        "You notice that an information record contains incomplete details. What would you do next?",
+        "You receive several tasks with the same deadline. How would you organize your work?",
+        "A user seems confused by your explanation. How would you adjust your communication?",
+        "You discover two sources that give different information. How would you proceed?"
+      ]
+    };
+
+    let currentVacancyIndex = 0;
+    let currentQuestion = "Tell me about yourself.";
+    let currentQuestionCategory = "Professional introduction";
+
+    const $ = (id)=>document.getElementById(id);
+
+    function renderVacancy(){
+      const v = vacancies[currentVacancyIndex];
+      $("vacancyCode").textContent = `Practice Vacancy ${currentVacancyIndex+1} of ${vacancies.length}`;
+      $("vacancyTitle").textContent = v.title;
+      $("vacancyType").textContent = v.type;
+      $("vacancyContext").textContent = v.context;
+      $("vacancyDescription").textContent = v.description;
+      $("vacancyKeywords").innerHTML = v.keywords.map(k=>`<span class="keyword">${k}</span>`).join("");
+      newQuestion();
+    }
+
+    function randomVacancy(){
+      if(vacancies.length<=1) return;
+      let next = currentVacancyIndex;
+      while(next===currentVacancyIndex) next = Math.floor(Math.random()*vacancies.length);
+      currentVacancyIndex = next;
+      renderVacancy();
+    }
+
+    function newQuestion(){
+      const v = vacancies[currentVacancyIndex];
+      const cats = Object.keys(questionPools);
+      const cat = cats[Math.floor(Math.random()*cats.length)];
+      let q = questionPools[cat][Math.floor(Math.random()*questionPools[cat].length)];
+      if(cat==="role"){
+        q += ` Think about the ${v.title} role.`;
+      }
+      currentQuestion=q;
+      const labels = {intro:"Professional introduction", motivation:"Motivation & fit", evidence:"Evidence-based", behavior:"Behavioural / STAR", role:"Role situation"};
+      currentQuestionCategory=labels[cat];
+      $("questionBox").textContent=q;
+      $("questionMeta").textContent=`Category: ${currentQuestionCategory} · Current role: ${v.title}`;
+      $("practiceQuestion").textContent=q;
+    }
+
+    function analyzeResume(text){
+      const v = vacancies[currentVacancyIndex];
+      const t = text.toLowerCase();
+      let score=0;
+      const diags=[];
+
+      const sectionPatterns = {
+        summary:["summary","profile","professional summary","professional profile"],
+        education:["education","university","bachelor","degree"],
+        experience:["experience","project","projects","leadership","volunteer","committee","organization"],
+        skills:["skills","languages","digital tools","software"]
+      };
+
+      const hasSection=(arr)=>arr.some(x=>t.includes(x));
+      let secCount=0;
+      Object.entries(sectionPatterns).forEach(([name,arr])=>{
+        if(hasSection(arr)) secCount++;
+      });
+      const sectionScore = secCount/4*20;
+      score += sectionScore;
+      if(secCount>=4) diags.push(["good","Core sections","Summary/profile, education, relevant experience/projects, and skills are visible."]);
+      else if(secCount>=2) diags.push(["warn","Core sections",`${secCount}/4 major section types detected. Make the structure easier to scan.`]);
+      else diags.push(["bad","Core sections","Important resume sections are difficult to detect."]);
+
+      const matched = v.keywords.filter(k=>{
+        const parts = k.toLowerCase().split(/\s+/);
+        return parts.some(p=>p.length>4 && t.includes(p));
+      });
+      const kwScore = Math.min(30, matched.length/v.keywords.length*30);
+      score += kwScore;
+      if(matched.length>=4) diags.push(["good","Vacancy alignment",`${matched.length}/${v.keywords.length} practice keyword areas are reflected in your resume.`]);
+      else if(matched.length>=2) diags.push(["warn","Vacancy alignment",`Only ${matched.length}/${v.keywords.length} keyword areas are clearly reflected. Add truthful evidence, not keyword stuffing.`]);
+      else diags.push(["bad","Vacancy alignment","Very little connection to the current vacancy is visible."]);
+
+      const actionVerbs=["assisted","organized","coordinated","created","managed","supported","analyzed","prepared","developed","communicated","documented","presented","reviewed","evaluated","identified","summarized","maintained","verified","conducted"];
+      const actionCount = actionVerbs.filter(vb=>new RegExp("\\b"+vb+"\\b","i").test(text)).length;
+      score += Math.min(20, actionCount*3.5);
+      if(actionCount>=4) diags.push(["good","Evidence language",`Multiple action verbs detected (${actionCount}). Your resume is showing what you did.`]);
+      else if(actionCount>=2) diags.push(["warn","Evidence language","Some evidence language appears, but more bullets could start with specific actions."]);
+      else diags.push(["bad","Evidence language","Too few specific action verbs detected. Avoid writing only course names or personality claims."]);
+
+      const genericClaims=["hardworking","hard-working","responsible person","good communication","excellent communication","fast learner","disciplined","honest person","team player"];
+      const genericHits=genericClaims.filter(g=>t.includes(g));
+      if(genericHits.length===0){score+=10;diags.push(["good","Claim quality","No obvious unsupported personality clichés detected."]);}
+      else if(genericHits.length<=2){score+=5;diags.push(["warn","Claim quality",`Generic claim(s) detected: ${genericHits.join(", ")}. Replace with evidence where possible.`]);}
+      else diags.push(["bad","Claim quality","Several unsupported personality claims detected. Show evidence instead."]);
+
+      const hasNumbers = /\b\d+[%+]?|\b(one|two|three|four|five|six|seven|eight|nine|ten)\b/i.test(text);
+      if(hasNumbers){score+=8;diags.push(["good","Context / results","Some specific numbers or scope indicators are present."]);}
+      else {score+=4;diags.push(["warn","Context / results","No clear scope or result indicators detected. Quantify only when truthful and useful."]);}
+
+      const length=text.trim().split(/\s+/).filter(Boolean).length;
+      if(length>=180 && length<=650){score+=12;diags.push(["good","Amount of content",`About ${length} words detected — reasonable for a one-page student resume.`]);}
+      else if(length<180){score+=5;diags.push(["warn","Amount of content",`Only about ${length} words detected. Make sure your relevant projects and evidence are not underdeveloped.`]);}
+      else {score+=5;diags.push(["warn","Amount of content",`About ${length} words detected. A one-page resume may be too dense; prioritize relevance.`]);}
+
+      score=Math.max(0,Math.min(100,Math.round(score)));
+      return {score,diags};
+    }
+
+    $("randomVacancy").addEventListener("click",randomVacancy);
+    $("newQuestion").addEventListener("click",newQuestion);
+    $("practiceNewQuestion").addEventListener("click",newQuestion);
+    $("copyQuestion").addEventListener("click",async()=>{
+      try{await navigator.clipboard.writeText(currentQuestion); $("copyQuestion").textContent="Copied"; setTimeout(()=>$("copyQuestion").textContent="Copy question",1200);}catch(e){}
+    });
+
+    $("checkResume").addEventListener("click",()=>{
+      const text=$("resumeText").value.trim();
+      if(!text){
+        $("diagnostics").innerHTML='<div class="diag bad"><strong>No resume text yet</strong>Paste your resume text first.</div>';
+        $("scoreValue").textContent="0"; $("scoreCircle").style.setProperty("--score",0); return;
+      }
+      const {score,diags}=analyzeResume(text);
+      $("scoreValue").textContent=score;
+      $("scoreCircle").style.setProperty("--score",score);
+      $("diagnostics").innerHTML=diags.map(d=>`<div class="diag ${d[0]}"><strong>${d[1]}</strong>${d[2]}</div>`).join("");
+    });
+
+    document.querySelectorAll(".tab-btn").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+        document.querySelectorAll(".framework").forEach(f=>f.classList.remove("active"));
+        btn.classList.add("active");
+        $(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    const plannerIds=["aerAnswer","aerEvidence","aerRelevance","aerKeywords","starSituation","starAction","starResult","starRole","respNotes","evidenceNotes"];
+    $("savePlanner").addEventListener("click",()=>{
+      const data={};
+      plannerIds.forEach(id=>data[id]=$(id).value);
+      localStorage.setItem("careerLabPlanner",JSON.stringify(data));
+      $("saveMessage").textContent="Saved locally on this device.";
+      setTimeout(()=>$("saveMessage").textContent="",1800);
+    });
+    $("clearPlanner").addEventListener("click",()=>{
+      plannerIds.forEach(id=>$(id).value="");
+      localStorage.removeItem("careerLabPlanner");
+      $("saveMessage").textContent="Planner cleared.";
+      setTimeout(()=>$("saveMessage").textContent="",1800);
+    });
+    try{
+      const saved=JSON.parse(localStorage.getItem("careerLabPlanner")||"null");
+      if(saved) plannerIds.forEach(id=>{if(saved[id]!=null) $(id).value=saved[id]});
+    }catch(e){}
+
+    let timerSeconds=90, timerHandle=null;
+    function updateTimer(){
+      const m=String(Math.floor(timerSeconds/60)).padStart(2,"0");
+      const s=String(timerSeconds%60).padStart(2,"0");
+      $("timerDisplay").textContent=`${m}:${s}`;
+    }
+    $("startTimer").addEventListener("click",()=>{
+      clearInterval(timerHandle);
+      timerSeconds=90; updateTimer();
+      timerHandle=setInterval(()=>{
+        timerSeconds--; updateTimer();
+        if(timerSeconds<=0){clearInterval(timerHandle); timerHandle=null;}
+      },1000);
+    });
+    $("resetTimer").addEventListener("click",()=>{clearInterval(timerHandle);timerHandle=null;timerSeconds=90;updateTimer();});
+
+    let mediaRecorder=null, chunks=[], stream=null;
+    $("startRecording").addEventListener("click",async()=>{
+      $("recordingError").textContent="";
+      if(!navigator.mediaDevices || !window.MediaRecorder){
+        $("recordingError").textContent="Audio recording is not supported in this browser. Try Chrome, Edge, or another modern browser.";
+        return;
+      }
+      try{
+        stream=await navigator.mediaDevices.getUserMedia({audio:true});
+        chunks=[];
+        mediaRecorder=new MediaRecorder(stream);
+        mediaRecorder.ondataavailable=e=>{if(e.data.size>0) chunks.push(e.data)};
+        mediaRecorder.onstop=()=>{
+          const blob=new Blob(chunks,{type:mediaRecorder.mimeType || "audio/webm"});
+          const url=URL.createObjectURL(blob);
+          $("audioPlayback").src=url;
+          $("audioPlayback").classList.remove("hide");
+          stream.getTracks().forEach(t=>t.stop());
+        };
+        mediaRecorder.start();
+        $("startRecording").disabled=true;
+        $("stopRecording").disabled=false;
+        $("recordState").classList.add("recording");
+        $("recordState").querySelector("span:last-child").textContent="Recording...";
+      }catch(e){
+        $("recordingError").textContent="Microphone access was not available. Check your browser permission and try again.";
+      }
+    });
+    $("stopRecording").addEventListener("click",()=>{
+      if(mediaRecorder && mediaRecorder.state!=="inactive") mediaRecorder.stop();
+      $("startRecording").disabled=false;
+      $("stopRecording").disabled=true;
+      $("recordState").classList.remove("recording");
+      $("recordState").querySelector("span:last-child").textContent="Recording finished";
+    });
+
+    renderVacancy();
+    updateTimer();
+  </script>
+</body>
+</html>
